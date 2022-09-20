@@ -16,4 +16,8 @@ export class ApiService {
     return this.http.get(environment.apiHost + '/hello');
   }
 
+  public sendApi(message): Observable<any> {
+    return this.http.get(environment.apiHost + '/');
+  }
+
 }

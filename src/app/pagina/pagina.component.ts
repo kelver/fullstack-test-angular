@@ -10,8 +10,7 @@ import { ApiService } from '../services/api.service';
   styleUrls: ['./pagina.component.scss']
 })
 export class PaginaComponent implements OnInit {
-
-  public apiGreeting = '';
+  public apiGreeting: string;
 
   constructor(
     private apiService: ApiService
@@ -19,6 +18,20 @@ export class PaginaComponent implements OnInit {
 
   ngOnInit(): void {
     this.apiService.getHello().pipe(
+      catchError((err) => {
+        this.apiGreeting = 'Falha na comunicação com o servidor.';
+        return [];
+      })
+    ).subscribe((response) => {
+      if (response) {
+        this.apiGreeting = response.mensagem;
+      }
+    });
+  }
+
+  sendApi(message: string): void {
+    console.log(message);
+    this.apiService.sendApi(message).pipe(
       catchError((err) => {
         this.apiGreeting = 'Falha na comunicação com o servidor.';
         return [];
