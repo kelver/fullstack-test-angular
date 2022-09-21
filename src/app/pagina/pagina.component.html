@@ -17,16 +17,38 @@
 
     <section class="content">
       <div class="box">
-        <form action="">
-          <div class="input-container">
-            <input id="name" #message class="input" type="text" required value="" />
-            <label class="label" for="name">Nome</label>
+        <div class="flat">
+          <div class="date">
+            Última consulta: {{ dateTime }}
           </div>
 
-          <div class="btn">
-            <button type="button" class="btnSend" (click)="sendApi(message.value)">Enviar</button>
+          <form action="" id="addMessage">
+            <div class="input-container">
+              <input id="name" #message class="input" type="text" required value="" />
+              <label class="label" for="name">Mensagem</label>
+            </div>
+
+            <div class="btn">
+              <button type="button" class="btnSend" (click)="sendMessage(message.value)">Enviar</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="flat">
+          <div class="cards">
+            <div *ngFor="let message of messages" class="card card-1">
+              <p class="card__title">{{message.message}}</p>
+            </div>
           </div>
-        </form>
+          <div class="flat">
+            <div class="btn">
+              <button class="btnSend" style="width: 100%" (click)="nextPage <= lastPage ? showMoreMessages() : return;">
+                <span *ngIf="nextPage > lastPage">Todos os resultados exibdos</span>
+                <span *ngIf="nextPage <= lastPage">Mostrar Mais</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>

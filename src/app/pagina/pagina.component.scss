@@ -77,6 +77,20 @@
     display: flex;
   }
 
+  .flat{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .date{
+  text-align: right;
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
 /*  input*/
 
   .input-container {
@@ -112,18 +126,19 @@
   }
 
   .box{
-    height: 30%;
-    max-height: auto;
-    position: relative;
     width: 90%;
     height: auto;
+    max-height: 75vh;
+    overflow-y: auto;
+    position: relative;
     margin: 15px;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
     padding: 20px;
     border-radius: 0 0 2px 2px;
     background-color: #FFF;
   }
-  /* Interation */
+
+  /* Inputs */
   input:valid,
   input:focus {
     border-bottom: 2px solid #7950f2;
@@ -164,3 +179,62 @@
     border-left: #7950f2 5px solid;
     border-right: #7950f2 5px solid;
   }
+
+/* CARDS */
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  margin: 20px;
+  padding: 20px;
+  width: 40%;
+  height: auto;
+  min-height: 100px;
+  border-radius: 10px ;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+}
+
+.card__link::after {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: all 0.5s;
+}
+
+.card__link:hover::after {
+  width: 100%;
+}
+
+.card__title {
+  grid-row: 3/4;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+/* CARD BACKGROUNDS */
+
+.card-1 {
+  background: radial-gradient(#1fe4f5, #3fbafe);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1600px) {
+  .cards {
+    justify-content: center;
+  }
+}
