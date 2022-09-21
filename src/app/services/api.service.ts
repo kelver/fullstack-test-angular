@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
@@ -12,12 +12,17 @@ export class ApiService {
     private http: HttpClient
   ) { }
 
-  public getHello(): Observable<any> {
-    return this.http.get(environment.apiHost + '/hello');
+  public getDateTime(): Observable<any> {
+    return this.http.get(environment.apiHost + '/datetime');
   }
 
-  public sendApi(message): Observable<any> {
-    return this.http.get(environment.apiHost + '/');
+  public getAllMessages(page = 1): Observable<any> {
+    let parms = new HttpParams().set("page", String(page));
+
+    return this.http.get(environment.apiHost + '/messages/', { params: parms });
   }
 
+  public storeNewMessage(message): Observable<any> {
+    return this.http.post(environment.apiHost + '/messages/store', { message });
+  }
 }
