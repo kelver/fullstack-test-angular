@@ -9,8 +9,7 @@
     <aside class="aside">
       <ul class="nav">
         <li>
-          <a href="/start" class="active">
-            <i class="fa fa-home"></i> Home</a>
+          <a href="/start" class="active">Home</a>
         </li>
       </ul>
     </aside>
@@ -42,9 +41,9 @@
           </div>
           <div class="flat">
             <div class="btn">
-              <button class="btnSend" style="width: 100%" (click)="nextPage <= lastPage ? showMoreMessages() : return;">
-                <span *ngIf="nextPage > lastPage">Todos os resultados exibdos</span>
-                <span *ngIf="nextPage <= lastPage">Mostrar Mais</span>
+              <button class="btnSend" style="width: 100%" (click)="nextPage < lastPage ? showMoreMessages() : ''">
+                <span *ngIf="nextPage >= lastPage">Todos os resultados exibdos</span>
+                <span *ngIf="nextPage < lastPage">Mostrar Mais</span>
               </button>
             </div>
           </div>

@@ -228,7 +228,8 @@
 /* CARD BACKGROUNDS */
 
 .card-1 {
-  background: radial-gradient(#1fe4f5, #3fbafe);
+  background: rgb(226,148,233);
+  background: radial-gradient(circle, rgba(226,148,233,1) 0%, rgba(121,80,242,1) 100%);
 }
 
 /* RESPONSIVE */
