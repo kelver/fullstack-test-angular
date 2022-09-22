@@ -1,22 +1,45 @@
-# Fullstack Test Angular
+<p align="center"><img src="https://user-images.githubusercontent.com/22528943/191649542-26a34e8f-1402-4664-979c-28a79f8dc6d9.png" width="400"></a></p>
 
-## Descrição
 
-Projeto em Angular (v11.0.3) gerado com o [Angular CLI](https://github.com/angular/angular-cli) v11.0.3.
 
-## Pré-requisitos e ambiente de desenvolvimento
+> ### Teste técnico aplicado para vaga Analista de Desenvolvimento PHP - Laravel - Full Stack - PLENO.
 
-- [Node.js](https://nodejs.org/en/download/) >= 10.13.0 (recomendado versão mais recente ou pelo menos LTS)
-- `npm` package manager (Node.js instala o `npm` automaticamente)
-- `@angular/cli` (instale com o comando `npm install -g @angular/cli`)
+Empresa: Novakio | Penze
 
-## Referências
+----------
 
-- [Documentação oficial](https://angular.io/docs) do Angular
-- [Coleção de links](https://raindrop.io/fromagio-cristiano/penze-angular-5191092) selecionados e organizados no Raindrop
+# Início
 
-## Comandos úteis
+## Instalação
 
-- `ng serve --open`: inicia o servidor de desenvolvimento em `http://localhost:4200/`. O app será compilado e recarregado automaticatimente quando houver mudanças no código-fonte.
-- `ng generate foobar foobar-name`: gerar classes e componentes
-- `ng help`: ajuda com os comandos do Angular CLI ou consulte a [documentação](https://angular.io/cli)
+Clone o repositório
+
+    git clone https://github.com/kelver/fullstack-test-angular.git
+
+Acesse a pasta do projeto
+
+    cd ./fullstack-test-angular
+
+Instale todas as dependências com o npm
+
+    npm install -g @angular/cli
+
+
+Para gerar o build e abrir a aplicação, execute
+
+    ng serve --open
+
+Em seguida navegue pelo link: http://localhost:4200/pagina
+
+Se tudo estiver ok, você deve ver a seguinte tela:
+
+![Tela01](https://user-images.githubusercontent.com/22528943/191652111-d1890499-0111-4dd8-8000-eedba97d7527.png)
+
+Ao enviar dados, a listagem deve ficar como o seguinte:
+
+![Tela02](https://user-images.githubusercontent.com/22528943/191652615-5e7b0970-7c70-4cb6-ba99-c616f3ef5b4a.png)
+
+
+Mais informações e detalhes, estou a disposição.
+
+----------
